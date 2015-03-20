@@ -1,0 +1,26 @@
+{
+  "name": "jquery.extruder",
+  "version": "0.0.0",
+  "homepage": "https://github.com/rodneyzhang/jquery.extruder",
+  "description": "Bower components for jquery extruder",
+  "main": "js/mbExtruder.js js/jquery.mb.flipText.js js/jquery.hoverIntent.min.js",
+  "keywords": [
+    "jquery",
+    "plugin",
+    "sidebar",
+    "pushmenu",
+    "extruder",
+    "mb_extruder"
+  ],
+  "authors": [
+    "rodney.zhang"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

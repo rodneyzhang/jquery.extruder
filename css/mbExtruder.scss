@@ -47,7 +47,7 @@ $borderBottomPanels:1px solid #000;
 .extruder{
   position:fixed;
   cursor:default;
-  background: url("../elements/extruder_blank.png");
+  background: url("../images/extruder_blank.png");
 }
 
 .extruder .header{
@@ -129,7 +129,7 @@ $borderBottomPanels:1px solid #000;
 
 .extruder.left{
   height:100%;
-  background:url("../elements/extruder_blank.png");
+  background:url("../images/extruder_blank.png");
 }
 
 .extruder.left.open .extruder-content{
@@ -170,7 +170,7 @@ $borderBottomPanels:1px solid #000;
 
 .extruder.right{
   height:100%;
-  background:url("../elements/extruder_blank.png");
+  background:url("../images/extruder_blank.png");
 }
 
 .extruder.right .extruder-content{
@@ -235,11 +235,11 @@ $borderBottomPanels:1px solid #000;
   }
 
   .extruder .voice.hover{
-    background:url("../elements/extruder_voiceHover.png") no-repeat top;
+    background:url("../images/extruder_voiceHover.png") no-repeat top;
   }
 
   .extruder .voice.sel{
-    background:url("../elements/extruder_voiceHover.png") no-repeat top;
+    background:url("../images/extruder_voiceHover.png") no-repeat top;
   }
 
   .extruder .voice img{
@@ -272,20 +272,20 @@ $borderBottomPanels:1px solid #000;
     position:absolute;
     width:36px;
     height:36px;
-    background: url("../elements/settingsBtn.png") no-repeat bottom;
+    background: url("../images/settingsBtn.png") no-repeat bottom;
     cursor:pointer;
     right:-3px;
     top:-4px;
   }
 
   .extruder .optionsPanel{
-    background: url("../elements/fuzz.gif");
+    background: url("../images/fuzz.gif");
     display:none;
     border-bottom:$borderBottom;
   }
 
   .extruder .voice.sel{
-    background: url("../elements/extruder_voiceHover.png") no-repeat top;
+    background: url("../images/extruder_voiceHover.png") no-repeat top;
   }
 
   /*Extruder Panel*/
@@ -303,7 +303,7 @@ $borderBottomPanels:1px solid #000;
   }
   .optionsPanel .panelVoice a:hover{
     color:#fff;
-    background: url("../elements/red_op_50.png");
+    background: url("../images/red_op_50.png");
   }
 
 :focus {

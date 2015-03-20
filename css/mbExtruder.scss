@@ -18,30 +18,30 @@
  *  *****************************************************************************
  */
 
-@mainColor:#000;
-@flapTextColor:#fff;
-@borderBottom:1px solid #333;
-@borderBottomPanels:1px solid #000;
+$mainColor:#000;
+$flapTextColor:#fff;
+$borderBottom:1px solid #333;
+$borderBottomPanels:1px solid #000;
 
-.roundedCorners (@tl:0, @tr: 0, @bl: 8px, @br: 8px) {
-  -moz-border-radius: @tl @tr @bl @br;
-  -webkit-border-top-left-radius: @tl;
-  -webkit-border-top-right-radius: @tr;
-  -webkit-border-bottom-left-radius: @bl;
-  -webkit-border-bottom-right-radius: @br;
-  border-top-left-radius: @tl;
-  border-top-right-radius: @tr;
-  border-bottom-left-radius: @bl;
-  border-bottom-right-radius: @br;
+@mixin roundedCorners ($tl:0, $tr:0, $bl:8px, $br:8px) {
+  -moz-border-radius: $tl $tr $bl $br;
+  -webkit-border-top-left-radius: $tl;
+  -webkit-border-top-right-radius: $tr;
+  -webkit-border-bottom-left-radius: $bl;
+  -webkit-border-bottom-right-radius: $br;
+  border-top-left-radius: $tl;
+  border-top-right-radius: $tr;
+  border-bottom-left-radius: $bl;
+  border-bottom-right-radius: $br;
 }
-.shadow (@hor: 2px, @vert: 0, @blur: 5px, @shadow: #999 ){
-  -moz-box-shadow:@hor @vert @blur @shadow;
-  -webkit-box-shadow:@hor @vert @blur @shadow;
-  box-shadow:@hor @vert @blur @shadow;
+@mixin shadow ($hor: 2px, $vert: 0, $blur: 5px, $shadow: #999 ){
+  -moz-box-shadow:$hor $vert $blur $shadow;
+  -webkit-box-shadow:$hor $vert $blur $shadow;
+  box-shadow:$hor $vert $blur $shadow;
 }
 
-.textShadow (@hor: 2px, @vert: 2px, @blur: 2px, @shadow: #333 ){
-  text-shadow:@hor @vert @blur @shadow;
+@mixin textShadow ($hor: 2px, $vert: 2px, $blur: 2px, $shadow: #333 ){
+  text-shadow:$hor $vert $blur $shadow;
 }
 
 .extruder{
@@ -56,25 +56,25 @@
 
 .extruder .extruder-content{
   display:none;
-  background:@mainColor;
+  background:$mainColor;
 }
 
 .extruder.open .extruder-content{
-  .shadow();
+  @include shadow();
 }
 
 .extruder .footer{
   display:none;
   height:10px;
-  background:@mainColor;
-  .roundedCorners(0, 0, 8px, 8px);
-  .shadow();
+  background:$mainColor;
+  @include roundedCorners(0, 0, 8px, 8px);
+  @include shadow();
 
 }
 
 /*extruder TOP*/
 .extruder.top .flap{
-  color:@flapTextColor;
+  color:$flapTextColor;
   font:18px/28px Arial, Helvetica, sans-serif;
   text-align:center;
   display:block;
@@ -82,14 +82,14 @@
   padding:0 5px 5px 5px;
   height:30px;
   width:180px;
-  background:@mainColor;
+  background:$mainColor;
   cursor:pointer;
-  .roundedCorners(0, 0, 8px, 8px);
-  .shadow();
-  .textShadow();
+  @include roundedCorners(0, 0, 8px, 8px);
+  @include shadow();
+  @include textShadow();
 }
 .extruder.top .extruder-content{
-  .roundedCorners(0, 0, 8px, 8px);
+  @include roundedCorners(0, 0, 8px, 8px);
 }
 
 /*extruder BOTTOM*/
@@ -104,21 +104,21 @@
   padding:0 5px 5px 5px;
   height:30px;
   width:180px;
-  background:@mainColor;
+  background:$mainColor;
   cursor:pointer;
-  .roundedCorners(8px, 8px, 0, 0);
-  .textShadow();
-  .shadow();
+  @include roundedCorners(8px, 8px, 0, 0);
+  @include textShadow();
+  @include shadow();
 }
 
 .extruder.bottom .footer{
-  .roundedCorners(8px, 8px, 0, 0);
+  @include roundedCorners(8px, 8px, 0, 0);
   position:relative;
   margin-top:-5px;
 }
 
 .extruder.bottom .extruder-content{
-  .roundedCorners(8px, 8px, 0, 0);
+  @include roundedCorners(8px, 8px, 0, 0);
 }
 
 .extruder.bottom .ext_wrapper{
@@ -133,11 +133,11 @@
 }
 
 .extruder.left.open .extruder-content{
-  .shadow();
+  @include shadow();
 }
 
 .extruder.left .extruder-content{
-  border-right:3px solid @mainColor;
+  border-right:3px solid $mainColor;
 }
 
 .extruder.left .ext_wrapper{
@@ -154,16 +154,16 @@
   top:0;
   padding:10px 0 10px 10px;
   margin-right:-37px;
-  background:@mainColor;
+  background:$mainColor;
   width:30px;
   position:absolute;
   right:0;
-  .roundedCorners(0, 8px, 0,8px);
-  .shadow();
+  @include roundedCorners(0, 8px, 0,8px);
+  @include shadow();
 }
 
 .extruder.left .flap .flapLabel{
-  background:@mainColor;
+  background:$mainColor;
 }
 
 /*extruder RIGHT*/
@@ -174,11 +174,11 @@
 }
 
 .extruder.right .extruder-content{
-  border-left:3px solid @mainColor;
+  border-left:3px solid $mainColor;
 }
 
 .extruder.right.open .extruder-content{
-  .shadow(-2px);
+  @include shadow(-2px);
 }
 
 .extruder.right .ext_wrapper{
@@ -195,16 +195,16 @@
   color:white;
   top:0;
   padding:10px 0 10px 10px;
-  background:@mainColor;
+  background:$mainColor;
   width:30px;
   position:absolute;
   left:-37px;
-  .roundedCorners(8px, 0, 8px, 0);
-  .shadow(-2px);
+  @include roundedCorners(8px, 0, 8px, 0);
+  @include shadow(-2px);
 }
 
 .extruder.right .flap .flapLabel{
-  background:@mainColor;
+  background:$mainColor;
 }
 
 /*Extruder CONTENT*/
@@ -215,8 +215,8 @@
     padding:5px;
     padding-left:10px;
     height:27px;
-    border-bottom:@borderBottom;
-    .textShadow();
+    border-bottom:$borderBottom;
+    @include textShadow();
   }
   .extruder .voice:last-child{
     border-bottom:none;
@@ -230,8 +230,8 @@
     font:14px/16px Arial, Helvetica, sans-serif;
     color:gray;
     padding:10px;
-    border-bottom:@borderBottom;
-    .textShadow();
+    border-bottom:$borderBottom;
+    @include textShadow();
   }
 
   .extruder .voice.hover{
@@ -281,7 +281,7 @@
   .extruder .optionsPanel{
     background: url("../elements/fuzz.gif");
     display:none;
-    border-bottom:@borderBottom;
+    border-bottom:$borderBottom;
   }
 
   .extruder .voice.sel{
@@ -297,8 +297,8 @@
     padding:8px;
     padding-left:20px;
     font-size:16px;
-    .textShadow();
-    border-bottom:@borderBottomPanels;
+    @include textShadow();
+    border-bottom:$borderBottomPanels;
     cursor:pointer;
   }
   .optionsPanel .panelVoice a:hover{
